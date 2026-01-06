@@ -38,9 +38,9 @@ All components are **config-driven**, reproducible, and aligned with the **Vecto
 ## 📦 Repository Structure
 
 ```
-aixpert/
+project/
 │
-├── src/aixpert/
+├── src/project/
 │   ├── config/                  # Central config.yaml
 │   ├── data_construction/       # 8-stage factual dataset pipeline
 │   ├── training/                # Original-DPO & F-DPO training
@@ -87,7 +87,7 @@ This repository contains a complete **eight-stage pipeline** for converting the 
 All paths and parameters are defined in:
 
 ```
-src/aixpert/config/config.yaml
+src/project/config/config.yaml
 ```
 
 ---
@@ -97,7 +97,7 @@ src/aixpert/config/config.yaml
 Every component — **datasets, models, hyperparameters, outputs, and evaluation** — is controlled via:
 
 ```
-src/aixpert/config/config.yaml
+src/project/config/config.yaml
 ```
 
 Loaded using:
@@ -120,7 +120,7 @@ This enables:
 ### 1️⃣ Original-DPO (Baseline)
 
 ```bash
-python -m aixpert.training.run_dpo_training \
+python -m project.training.run_dpo_training \
   --model "google/gemma-2-9b-it"
 ```
 
@@ -131,7 +131,7 @@ Trains standard DPO using Skywork preferences.
 ### 2️⃣ F-DPO (Δ-Margin Training)
 
 ```bash
-python -m aixpert.training.run_factual_training \
+python -m project.training.run_factual_training \
   --model_id "google/gemma-2-9b-it" \
   --short "gemma2-9b" \
   --delta 10
@@ -157,7 +157,7 @@ Evaluation is performed using **GPT-4o-mini as an LLM-as-a-Judge**.
 Run evaluation:
 
 ```bash
-python -m aixpert.evaluation.evaluations.run_all_evaluations
+python -m project.evaluation.evaluations.run_all_evaluations
 ```
 
 Outputs:
