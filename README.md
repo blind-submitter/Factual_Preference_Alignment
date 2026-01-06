@@ -2,7 +2,7 @@
 ### A Modular Training Framework for Factuality-Aware Direct Preference Optimization(F-DPO)
 
 <p align="center" style="margin-top: -10px; margin-bottom: -10px;">
-  <img src="docs/assets/factualDPO.png" width="320"/>
+  <img src="Images/factualDPO.png" width="320"/>
 </p>
 
 ## 🧭 About
